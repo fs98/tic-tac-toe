@@ -1,7 +1,5 @@
 import { Game } from "./components/Game";
 
-const App = () => {
-  return <Game />;
-};
+const App = () => <Game />;
 
 export default App;
