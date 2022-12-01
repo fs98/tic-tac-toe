@@ -1,5 +1,10 @@
-import React from "react";
-
-export const Square = () => {
-  return <div className="px-14 py-10 text-center align-middle text-5xl">x</div>;
+export const Square = ({ value, handleClick }) => {
+  return (
+    <button
+      className="px-12 py-7 text-center font-bold align-middle text-3xl md:text-7xl border text-amber-400"
+      onClick={() => handleClick()}
+    >
+      {value}
+    </button>
+  );
 };
