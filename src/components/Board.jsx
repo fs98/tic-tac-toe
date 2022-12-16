@@ -28,6 +28,17 @@ export const Board = () => {
     setXIsNext(!xIsNext);
   };
 
+  const handleStartNewGame = () => {
+    if (
+      window.confirm(
+        "Are you sure you want to start a new game? You will lose your progress."
+      )
+    ) {
+      setSquares(Array(9).fill(null));
+      setXIsNext(true);
+    }
+  };
+
   return (
     <>
       <div className="grid grid-cols-3 bg-rose-500 rounded-2xl">
@@ -39,9 +50,15 @@ export const Board = () => {
           />
         ))}
       </div>
-      <div className="text-center px-10">
+      <div className="text-center px-10 mt-2">
         <p>{status}</p>
       </div>
+      <button
+        onClick={handleStartNewGame}
+        className="px-4 py-2 mt-5 rounded-lg font-bold bg-gradient-to-b from-amber-300 to-amber-400 hover:from-amber-400 hover:to-amber-500"
+      >
+        New Game
+      </button>
     </>
   );
 };
